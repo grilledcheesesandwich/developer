@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="ruleset" ToolsVersion="11.0">
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <Rule Id="CA1008" Action="Warning" />
+    <Rule Id="CA1011" Action="Warning" />
+    <Rule Id="CA1020" Action="Warning" />
+    <Rule Id="CA1026" Action="Warning" />
+    <Rule Id="CA1028" Action="Warning" />
+    <Rule Id="CA1032" Action="Warning" />
+    <Rule Id="CA1034" Action="Warning" />
+    <Rule Id="CA1053" Action="Warning" />
+    <Rule Id="CA1404" Action="Warning" />
+    <Rule Id="CA1505" Action="Warning" />
+    <Rule Id="CA1702" Action="Warning" />
+    <Rule Id="CA1710" Action="Warning" />
+    <Rule Id="CA1720" Action="Warning" />
+    <Rule Id="CA1724" Action="Warning" />
+    <Rule Id="CA1800" Action="Warning" />
+    <Rule Id="CA1801" Action="Warning" />
+    <Rule Id="CA1804" Action="Warning" />
+    <Rule Id="CA1806" Action="Warning" />
+    <Rule Id="CA1809" Action="Warning" />
+    <Rule Id="CA1812" Action="Warning" />
+    <Rule Id="CA1820" Action="Warning" />
+    <Rule Id="CA1823" Action="Warning" />
+    <Rule Id="CA2001" Action="Warning" />
+    <Rule Id="CA2111" Action="Warning" />
+    <Rule Id="CA2205" Action="Warning" />
+    <Rule Id="CA2213" Action="Warning" />
+    <Rule Id="CA2217" Action="Warning" />
+  </Rules>
+</RuleSet>

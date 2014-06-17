@@ -1,0 +1,21 @@
+TARGETNAME=TaskScheduler
+
+TARGETTYPE=PROGRAM
+EXEENTRY=wmainCRTStartup
+TARGET_DESTINATION=TEST
+
+INCLUDES= \
+    $(INCLUDES); \
+    $(_PUBLICROOT)\phonebase\oak\inc; \
+    $(BASEOS_INC_PATH); \
+    $(BASE_INC_PATH); \
+    ..; \
+
+TARGETLIBS= \
+    $(SDK_LIB_PATH)\mincore.lib \
+    $(MINCORE_SDK_LIB_PATH)\mincore_obsolete.lib \
+    $(SDK_LIB_PATH)\ntdll.lib \
+    $(BASEOS_LIB_PATH)\TaskSchedulerAPI.lib \
+
+SOURCES= \
+    $(TARGETNAME).cpp \

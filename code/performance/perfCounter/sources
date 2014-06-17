@@ -1,0 +1,19 @@
+TARGETNAME=perfCounter
+
+TARGETTYPE=PROGRAM
+EXEENTRY=WinMainCRTStartup
+
+# Compile at warning level 4
+#WARNISERROR=1
+WARNLEVEL=4
+
+INCLUDES=$(INCLUDES) \
+         $(_PRIVATEROOT)\test\Security\LoaderVerifier\lvmod_pinvokes \
+
+TARGETLIBS= \
+	$(_COREDLL) \
+    $(_IRI) \
+    $(_PUBLICROOT)\test\oak\lib\$(_CPUINDPATH)\lvmod_pinvokes.lib \
+
+SOURCES= \
+    $(TARGETNAME).cpp \

@@ -1,0 +1,17 @@
+TARGETNAME=template
+
+TARGETTYPE=PROGRAM
+EXEENTRY=wmainCRTStartup
+TARGET_DESTINATION=TEST
+
+INCLUDES= \
+    $(INCLUDES); \
+    $(_PUBLICROOT)\phonebase\oak\inc; \
+    $(BASEOS_INC_PATH); \
+    ..; \
+
+TARGETLIBS= \
+	$(_COREDLL) \
+
+SOURCES= \
+    $(TARGETNAME).cpp \

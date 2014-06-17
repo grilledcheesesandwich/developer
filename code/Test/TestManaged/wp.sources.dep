@@ -1,0 +1,6 @@
+BUILD_PASS1_CONSUMES= \
+    src\appplat\src\internalfx\src|PASS1 \
+    src\appplat\src\internalfx\system.net.testonly|PASS1 \
+    src\baseos\test\security\securitymodel\securitymodellibrary|PASS1 \
+    src\uxplat\common\test\utilities\managed\build|PASS1 \
+

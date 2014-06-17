@@ -1,0 +1,5 @@
+PUBLIC_PASS2_CONSUMES= \
+    src\baseos\prod\securitymodel\chamberprofile\dll|PASS2 \
+    src\baseos\prod\securitymodel\provision\runtime\security\umode|PASS2 \
+    src\baseos\test\security\securitymodel\sectesthlp\dll|PASS2 \
+

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WTTManager", "WTTManager\WTTManager.csproj", "{A678EEB6-DE33-4EBD-BCBD-6D40C690A1E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WttService", "WttService\WttService.csproj", "{32442BCB-7746-40E4-926E-D7F7A9E1DF8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GomJobber", "GomJobber\GomJobber.csproj", "{EA7E50A9-4B24-45CB-B580-F878FA3D76D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A678EEB6-DE33-4EBD-BCBD-6D40C690A1E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A678EEB6-DE33-4EBD-BCBD-6D40C690A1E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A678EEB6-DE33-4EBD-BCBD-6D40C690A1E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A678EEB6-DE33-4EBD-BCBD-6D40C690A1E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32442BCB-7746-40E4-926E-D7F7A9E1DF8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32442BCB-7746-40E4-926E-D7F7A9E1DF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32442BCB-7746-40E4-926E-D7F7A9E1DF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32442BCB-7746-40E4-926E-D7F7A9E1DF8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA7E50A9-4B24-45CB-B580-F878FA3D76D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA7E50A9-4B24-45CB-B580-F878FA3D76D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA7E50A9-4B24-45CB-B580-F878FA3D76D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA7E50A9-4B24-45CB-B580-F878FA3D76D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

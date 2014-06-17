@@ -1,0 +1,38 @@
+TARGETNAME=xapExtract
+
+TARGETTYPE=PROGRAM
+EXEENTRY=mainWCRTStartup
+
+!INCLUDE $(_PRIVATEROOT)\appplatsvc\sources.cmn
+
+INCLUDES=\
+    $(INCLUDES);                     \
+    $(_WINCEROOT)\others\atl9\include; \
+    $(APPPLATSVCOAKINCDIR);          \
+    $(APPPLATSVCINCDIR);             \
+    $(PACMANINCDIR);                 \
+    $(_PRIVATEROOT)\meinfra\zmx\DRM\XDRMAPP\src;              \
+    $(_PRIVATEROOT)\ossvcs\inc;      \
+    $(_PUBLICROOT)\directx\sdk\inc;  \
+    $(_PUBLICROOT)\ossvcs\oak\inc;   \
+    $(_PRIVATEROOT)\appplatsvc\packagemanager\Database\src; \
+    $(_PRIVATEROOT)\silverlight\public\cesdk\inc; \
+    $(_PRIVATEROOT)\silverlight\public\cevc\inc; \
+    $(_PUBLICROOT)\shellw\sdk\inc; \
+    $(_PUBLICROOT)\ossvcs\sdk\inc; \
+    $(_PRIVATEROOT)\appplatsvc\packagemanager\activities\src; \
+
+TARGETLIBS= \
+	$(_COREDLL) \
+	$(_PUBLICROOT)\AppPlatSvc\oak\lib\$(_CPUINDPATH)\Activities.lib \
+    $(_OSSVCS) \
+    $(_XMLLITE) \
+    $(_SHLWAPI) \
+    $(_AYGSHELL) \
+    $(_PUBLICROOT)\AppPlatSvc\oak\lib\$(_CPUINDPATH)\Activities.lib \
+    $(APPPLATSVCOAKLIBDIR)\PMLog.lib \
+    $(_PRIVATEROOT)\winceos\lib\$(_CPUINDPATH)\XmlLib.lib \
+    $(_XMLLITE) \
+
+SOURCES= \
+    $(TARGETNAME).cpp \

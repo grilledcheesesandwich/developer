@@ -1,0 +1,27 @@
+TARGETNAME=lltest
+TARGETTYPE=PROGRAM
+EXEENTRY=wmainCRTStartup
+TARGET_DESTINATION=TEST
+
+INCLUDES= \
+    $(INCLUDES); \
+    $(_WINPHONEROOT)\src\baseos\tools\Security\SecurityModel\objsd\dll; \
+    $(_PUBLICROOT)\phonebase\oak\inc; \
+    $(PUBLIC_INTERNAL_PATH)\sdk\inc; \
+	$(BASEOS_INC_PATH); \
+    $(MINCORE_PRIV_SDK_INC_PATH); \
+    ..; \
+
+SOURCES= \
+    $(TARGETNAME).cpp
+    
+TARGETLIBS= \
+    $(BASEOS_LIB_PATH)\sectesthlp.lib \
+	$(BASEOS_LIB_PATH)\ChamberProf.lib \
+    $(BASEOS_LIB_PATH)\SecRuntime.lib \
+    $(BASEOS_LIB_PATH)\GWPCPC.lib \
+    $(BASEOS_LIB_PATH)\WPCoreUtil.lib \
+    $(SDK_LIB_PATH)\ntdll.lib \
+    $(SDK_LIB_PATH)\mincore.lib \
+    $(MINCORE_PRIV_SDK_LIB_PATH)\mincore_private.lib \
+    $(MINCORE_SDK_LIB_PATH)\mincore_obsolete.lib \

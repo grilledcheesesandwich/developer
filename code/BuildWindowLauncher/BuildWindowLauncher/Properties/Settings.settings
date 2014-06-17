@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BuildWindowLauncher.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Project" Type="System.String" Scope="User">
+      <Value Profile="(Default)">&amp;Smartfon</Value>
+    </Setting>
+    <Setting Name="EnlistmentRoots" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;e:\WM7CoreOS&lt;/string&gt;
+  &lt;string&gt;e:\04&lt;/string&gt;
+  &lt;string&gt;e:\OSPlatform&lt;/string&gt;
+  &lt;string&gt;e:\Seven&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="LastEnlistmentRoot" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LastColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Platform" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CE&amp;PC</Value>
+    </Setting>
+    <Setting Name="Mode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">&amp;Release</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

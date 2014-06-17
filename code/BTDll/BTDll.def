@@ -1,0 +1,5 @@
+LIBRARY BTDll
+
+EXPORTS
+    Connect
+

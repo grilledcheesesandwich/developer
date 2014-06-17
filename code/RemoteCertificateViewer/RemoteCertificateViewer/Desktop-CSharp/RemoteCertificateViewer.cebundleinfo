@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RTFxPlugin SchemaVersion="1.0" RTFxBuild="7.0.0.0" xmlns="http://schemas.microsoft.com/windowsce/rtfx/" AutoLoadWhenDependantPluginLoaded="False" GUID="3e890fd9-15c5-4e9e-96a1-c2b78c869d56">
+  <Copyright>Copyright 2010 Microsoft Corporation. All rights reserved.</Copyright>
+  <Version>1.10.6036</Version>
+  <Company>Microsoft Corporation</Company>
+  <URL>http://www.microsoft.com/windowsce</URL>
+  <Locales>
+    <Locale LCID="0" Language="Any" />
+  </Locales>
+  <Titles>
+    <Title Name="Remote Certificate Viewer" Description="View, add, and remove certificates from the device" />
+  </Titles>
+  <DesktopComponent UsesDefaultShell="True" PluginObjectName="RemoteCertificateViewer.CertificateViewer" DeviceConnectionRequirement="0">
+    <ImportableFileTypes />
+    <Files>
+      <File PrimaryComponent="True" DoNotDeploy="False" CopyToAltReleaseDirectory="True" Description="PrimaryDesktop">
+        <Path ID="1" Location="bin\%Configuration%\RemoteCertificateViewer.dll" />
+      </File>
+    </Files>
+  </DesktopComponent>
+  <DeviceComponents ExecutableInstance="0">
+    <Configurations>
+      <Configuration RemotePath="\temp" DeviceOSVerMax="0" DeviceOSVerMin="0" Managed="True" Name="_dotNET_Configuration" CPU=".NET">
+        <IncludedPackages>
+          <IncludedPackage Name="_dotNET_Package" />
+        </IncludedPackages>
+      </Configuration>
+    </Configurations>
+    <Packages>
+      <Package Name="_dotNET_Package">
+        <Files>
+          <File PrimaryComponent="True" DoNotDeploy="False" CopyToAltReleaseDirectory="True" Description="_dotNET_File">
+            <Path ID="0" Location="E:\SevenOSP\developr\unionp\code\RemoteCertificateViewer\RemoteCertificateViewer\Device-CSharp\bin\%Configuration%\RemoteCertificateViewer.exe" />
+          </File>
+        </Files>
+      </Package>
+    </Packages>
+  </DeviceComponents>
+</RTFxPlugin>

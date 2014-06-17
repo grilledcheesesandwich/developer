@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Initial release of ezLog XML format.  Note that this release does not always generate parseable XML.
+     If you are parsing this file using automation, please join the EZLOGD DL to be notified of changes when they occur.
+     Note that the format WILL change.
+     Send mail to EZLOGD with comments/suggestions about the behavior of ezLog. -->
+<?xml-stylesheet type="text/xsl" href="ezlog.xslt" ?>
+<ezLog FileFmt="0.51"><ezHeader openFlags='0x0' > <fileName> MakePKI.log </fileName> <fileLengthHint> 12 </fileLengthHint> <lineLengthHint> 3 </lineLengthHint> <compileTime> Jan 10 2006 19:29:17 </compileTime> <textOpenFlags>  </textOpenFlags> <Levels>
+ <Level id='0x00000001' prec='500' flags='RED,GREEN,TE_ABORT'>  ABORT       </Level>
+ <Level id='0x00000002' prec='300' flags='RED,ATTEMPTED'>  SEV1        </Level>
+ <Level id='0x00000004' prec='200' flags='RED,ATTEMPTED'>  SEV2        </Level>
+ <Level id='0x00000008' prec='100' flags='RED,ATTEMPTED'>  SEV3        </Level>
+ <Level id='0x00000010' prec='50' flags='RED,GREEN,ATTEMPTED,SUCCESSFUL,TE_WARN'>  Warning     </Level>
+ <Level id='0x00000020' prec='10' flags='GREEN,ATTEMPTED,SUCCESSFUL'>  Pass        </Level>
+ <Level id='0x00000040' prec='350' flags='BLUE,ATTEMPTED,SUCCESSFUL,TE_WARN'>  Known Bug   </Level>
+ <Level id='0x00000400' prec='400' flags='RED,BLUE'>  BLOCKED     </Level>
+ <Level id='0x00001000' prec='0' flags='NONRESULTANT'>  Debug       </Level>
+ <Level id='0x00002000' prec='0' flags='NONRESULTANT'>  Info        </Level>
+ <Level id='0x00004000' prec='1' flags='SKIPPED'>  Skipped     </Level>
+ <Level id='0x00008000' prec='0' flags='NONRESULTANT,DBGPRINT'>  DbgPrint    </Level>
+</Levels> </ezHeader> <RUN>
+<MSG BlockId='0' LevelId='0x00001000' Location=" infcert.cpp:7421" LevelName="Debug"> InfReadCertEx: Key exists, deleting it first. </MSG>
+</RUN>
+<REPORT>
+<ezBlockTable>
+</ezBlockTable>
+<ezDownlevelTable>
+----------------
+  ezLog report  
+----------------
+</ezDownlevelTable>
+<misc>
+MakePKI.log started at 16:07:04 02/08/2007, finished at 16:07:05 02/08/2007.
+Time elapsed in MakePKI.log: 313 Milliseconds.
+</misc><misc>
+</misc>
+<misc>
+
+
+ There were no test blocks. 
+
+
+</misc>
+</REPORT>
+</ezLog>

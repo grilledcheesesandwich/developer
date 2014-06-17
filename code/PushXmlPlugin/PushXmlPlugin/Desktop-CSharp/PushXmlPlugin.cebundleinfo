@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RTFxPlugin SchemaVersion="1.0" RTFxBuild="6.0.1937.0" xmlns="http://schemas.microsoft.com/windowsce/rtfx/" AutoLoadWhenDependantPluginLoaded="False" GUID="69F77EF8-6765-4B39-B302-0B56358BE413">
+  <Copyright>Copyright 2008 Microsoft Corporation. All rights reserved.</Copyright>
+  <Version>1.00.0000</Version>
+  <Company>Microsoft Corporation</Company>
+  <URL>http://www.microsoft.com/windowsce</URL>
+  <Locales>
+    <Locale LCID="0" Language="Any" />
+    <Locale LCID="1033" Language="English" />
+  </Locales>
+  <Titles>
+    <Title Name="PushXML" Description="A plugin to push XML through ConfigManager and return the result" />
+    <Title LCID="1033" _locID="Todo" Name="PushXML" Description="A plugin to push XML through ConfigManager and return the result" />
+  </Titles>
+  <DesktopComponent UsesDefaultShell="True" PluginObjectName="PushXmlPlugin.PushXml" DeviceConnectionRequirement="0">
+    <ImportableFileTypes />
+    <Files>
+      <File PrimaryComponent="True" DoNotDeploy="False" CopyToAltReleaseDirectory="True" Description="PrimaryDesktop">
+        <Path ID="1" Location="bin\%Configuration%\PushXmlPlugin.dll" />
+      </File>
+    </Files>
+  </DesktopComponent>
+  <DeviceComponents ExecutableInstance="0">
+    <Configurations>
+      <Configuration RemotePath="\temp" DeviceOSVerMax="0" DeviceOSVerMin="0" Managed="True" Name="_dotNET_Configuration" CPU=".NET">
+        <IncludedPackages>
+          <IncludedPackage Name="_dotNET_Package" />
+        </IncludedPackages>
+      </Configuration>
+    </Configurations>
+    <Packages>
+      <Package Name="_dotNET_Package">
+        <Files>
+          <File PrimaryComponent="True" DoNotDeploy="False" CopyToAltReleaseDirectory="True" Description="_dotNET_File">
+            <Path ID="0" Location="E:\SevenOSP\developr\unionp\code\PushXmlPlugin\PushXmlPlugin\Device-CSharp\bin\%Configuration%\PushXmlPlugin.exe" />
+          </File>
+        </Files>
+      </Package>
+    </Packages>
+  </DeviceComponents>
+</RTFxPlugin>

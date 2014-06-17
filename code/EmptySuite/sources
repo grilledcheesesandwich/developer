@@ -1,0 +1,32 @@
+!if 0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+!endif
+!if 0
+Use of this source code is subject to the terms of the Microsoft
+premium shared source license agreement under which you licensed
+this source code. If you did not accept the terms of the license
+agreement, you are not authorized to use this source code.
+For the terms of the license, please see the license agreement
+signed by you and Microsoft.
+THE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
+!endif
+TARGETNAME=$(_WMQANAMESPACE).Tests.EmptySuite
+
+TARGETTYPE=MANAGED_DLL
+RELEASETYPE=MANAGED
+
+SYNCHRONIZE_DRAIN=1
+
+SOURCES= \
+    Tests.cs \
+
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(_MANAGED_FRAMEWORK_DIR)\mscorlib.dll
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(_MANAGED_FRAMEWORK_DIR)\system.dll
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(_MANAGED_FRAMEWORK_DIR)\system.data.dll
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(_MANAGED_FRAMEWORK_DIR)\system.xml.dll
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(_DATK)
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(_LOGGER)
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(_UTILSDOTNET)
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(_MOBILITYTOOLKIT)
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(_TUXNETCORE)
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(TEST_OAK_MANAGED_PATH)\Microsoft.WindowsCE.Win32API.dll

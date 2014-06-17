@@ -1,0 +1,16 @@
+TARGETNAME=unlockrapi
+
+TARGETTYPE=PROGRAM
+EXEENTRY=WinMainCRTStartup
+
+# Compile at warning level 4
+WARNISERROR=1
+WARNLEVEL=4
+
+INCLUDES=$(INCLUDES)
+
+TARGETLIBS= $(TARGETLIBS) \
+	$(_COREDLL) \
+
+SOURCES= \
+    $(TARGETNAME).cpp \

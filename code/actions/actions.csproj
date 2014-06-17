@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F315D5C6-F227-44FF-80B8-459E6FBAE29F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>actions</RootNamespace>
+    <AssemblyName>actions</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sources" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="BtConnectionManager">
+      <HintPath>..\..\..\..\..\MIXOS_CSI.binaries.MC.armfre\bin\test\net_bluetooth\ARM\fre\BtConnectionManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Test.Bluetooth.Common.AreaLibrary">
+      <HintPath>..\..\..\..\..\MIXOS_CSI.binaries.MC.x86fre\bin\test\net_bluetooth\x86\fre\Microsoft.Phone.Test.Bluetooth.Common.AreaLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Test.MediaApps.MusicVideo.Library">
+      <HintPath>..\..\..\..\..\MIXOS_CSI.binaries.MC.x86fre\bin\test\common\x86\fre\Microsoft.Phone.Test.MediaApps.MusicVideo.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Test.NavigationModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=901afcbaad18fcdd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\MIXOS_CSI.binaries.MC.x86fre\bin\test\common\x86\fre\Microsoft.Phone.Test.NavigationModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Test.Security.SecurityModel">
+      <HintPath>..\..\..\..\..\MIXOS_CSI.binaries.MC.armfre\bin\test\common\arm\fre\Microsoft.Phone.Test.Security.SecurityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Test.Shell.StartX.AreaLibrary">
+      <HintPath>..\..\..\..\..\MIXOS_CSI.binaries.MC.x86fre\bin\test\common\x86\fre\Microsoft.Phone.Test.Shell.StartX.AreaLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Test.Utilities">
+      <HintPath>..\..\..\..\..\MIXOS_CSI.binaries.MC.x86fre\bin\test\common\x86\fre\Microsoft.Phone.Test.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="$(PUBLIC_ROOT)\kit\sdk\winmetadata\WINDOWS.WINMD" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

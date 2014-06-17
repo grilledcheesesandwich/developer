@@ -1,0 +1,8 @@
+﻿Directory Contains \test
+Directory Contains unittest
+Directory Contains \ut_
+Directory StartsWith %_WINPHONEROOT%\developr
+Directory StartsWith %_WINPHONEROOT%\corext
+Directory StartsWith %_WINPHONEROOT%\public\coresystem
+File EndsWith \wincrypt.h
+File EndsWith \wincrypt.idl

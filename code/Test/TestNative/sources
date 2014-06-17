@@ -1,0 +1,17 @@
+TARGETNAME=TestNative
+
+TARGETTYPE=PROGRAM
+EXEENTRY=wmainCRTStartup
+TARGET_DESTINATION=TEST
+
+INCLUDES= \
+    $(INCLUDES) \
+    ..\..; \
+    $(_PUBLICROOT)\phonebase\oak\inc \
+
+TARGETLIBS= \
+	$(_COREDLL) \
+
+
+SOURCES= \
+    $(TARGETNAME).cpp \

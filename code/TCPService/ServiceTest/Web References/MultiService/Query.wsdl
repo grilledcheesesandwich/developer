@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetJobsForDpk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dpkPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJobsForDpkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJobsForDpkResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetJobsForChangelist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="changelist" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="depot" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJobsForChangelistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJobsForChangelistResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJobsFromWtqXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wtqXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJobsFromWtqXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJobsFromWtqXmlResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJobsFromWtq">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wtqPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJobsFromWtqResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJobsFromWtqResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJobNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jobIDs" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJobNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJobNamesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDpkNameFromDpkBytes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dpkBytes" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDpkNameFromDpkBytesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDpkNameFromDpkBytesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDpkName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dpkPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDpkNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDpkNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetJobsForDpkSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJobsForDpk" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsForDpkSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJobsForDpkResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsForChangelistSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJobsForChangelist" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsForChangelistSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJobsForChangelistResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsFromWtqXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJobsFromWtqXml" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsFromWtqXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJobsFromWtqXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsFromWtqSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJobsFromWtq" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsFromWtqSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJobsFromWtqResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJobNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJobNames" />
+  </wsdl:message>
+  <wsdl:message name="GetJobNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJobNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDpkNameFromDpkBytesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDpkNameFromDpkBytes" />
+  </wsdl:message>
+  <wsdl:message name="GetDpkNameFromDpkBytesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDpkNameFromDpkBytesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDpkNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDpkName" />
+  </wsdl:message>
+  <wsdl:message name="GetDpkNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDpkNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsForDpkHttpGetIn">
+    <wsdl:part name="dpkPath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsForDpkHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsForChangelistHttpGetIn">
+    <wsdl:part name="changelist" type="s:string" />
+    <wsdl:part name="depot" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsForChangelistHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsFromWtqXmlHttpGetIn">
+    <wsdl:part name="wtqXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsFromWtqXmlHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsFromWtqHttpGetIn">
+    <wsdl:part name="wtqPath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsFromWtqHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetDpkNameFromDpkBytesHttpGetIn">
+    <wsdl:part name="dpkBytes" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetDpkNameFromDpkBytesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDpkNameHttpGetIn">
+    <wsdl:part name="dpkPath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDpkNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsForDpkHttpPostIn">
+    <wsdl:part name="dpkPath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsForDpkHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsForChangelistHttpPostIn">
+    <wsdl:part name="changelist" type="s:string" />
+    <wsdl:part name="depot" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsForChangelistHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsFromWtqXmlHttpPostIn">
+    <wsdl:part name="wtqXml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsFromWtqXmlHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsFromWtqHttpPostIn">
+    <wsdl:part name="wtqPath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJobsFromWtqHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetDpkNameFromDpkBytesHttpPostIn">
+    <wsdl:part name="dpkBytes" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetDpkNameFromDpkBytesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDpkNameHttpPostIn">
+    <wsdl:part name="dpkPath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDpkNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="QuerySoap">
+    <wsdl:operation name="GetJobsForDpk">
+      <wsdl:input message="tns:GetJobsForDpkSoapIn" />
+      <wsdl:output message="tns:GetJobsForDpkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsForChangelist">
+      <wsdl:input message="tns:GetJobsForChangelistSoapIn" />
+      <wsdl:output message="tns:GetJobsForChangelistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsFromWtqXml">
+      <wsdl:input message="tns:GetJobsFromWtqXmlSoapIn" />
+      <wsdl:output message="tns:GetJobsFromWtqXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsFromWtq">
+      <wsdl:input message="tns:GetJobsFromWtqSoapIn" />
+      <wsdl:output message="tns:GetJobsFromWtqSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobNames">
+      <wsdl:input message="tns:GetJobNamesSoapIn" />
+      <wsdl:output message="tns:GetJobNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDpkNameFromDpkBytes">
+      <wsdl:input message="tns:GetDpkNameFromDpkBytesSoapIn" />
+      <wsdl:output message="tns:GetDpkNameFromDpkBytesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDpkName">
+      <wsdl:input message="tns:GetDpkNameSoapIn" />
+      <wsdl:output message="tns:GetDpkNameSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="QueryHttpGet">
+    <wsdl:operation name="GetJobsForDpk">
+      <wsdl:input message="tns:GetJobsForDpkHttpGetIn" />
+      <wsdl:output message="tns:GetJobsForDpkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsForChangelist">
+      <wsdl:input message="tns:GetJobsForChangelistHttpGetIn" />
+      <wsdl:output message="tns:GetJobsForChangelistHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsFromWtqXml">
+      <wsdl:input message="tns:GetJobsFromWtqXmlHttpGetIn" />
+      <wsdl:output message="tns:GetJobsFromWtqXmlHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsFromWtq">
+      <wsdl:input message="tns:GetJobsFromWtqHttpGetIn" />
+      <wsdl:output message="tns:GetJobsFromWtqHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDpkNameFromDpkBytes">
+      <wsdl:input message="tns:GetDpkNameFromDpkBytesHttpGetIn" />
+      <wsdl:output message="tns:GetDpkNameFromDpkBytesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDpkName">
+      <wsdl:input message="tns:GetDpkNameHttpGetIn" />
+      <wsdl:output message="tns:GetDpkNameHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="QueryHttpPost">
+    <wsdl:operation name="GetJobsForDpk">
+      <wsdl:input message="tns:GetJobsForDpkHttpPostIn" />
+      <wsdl:output message="tns:GetJobsForDpkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsForChangelist">
+      <wsdl:input message="tns:GetJobsForChangelistHttpPostIn" />
+      <wsdl:output message="tns:GetJobsForChangelistHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsFromWtqXml">
+      <wsdl:input message="tns:GetJobsFromWtqXmlHttpPostIn" />
+      <wsdl:output message="tns:GetJobsFromWtqXmlHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsFromWtq">
+      <wsdl:input message="tns:GetJobsFromWtqHttpPostIn" />
+      <wsdl:output message="tns:GetJobsFromWtqHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDpkNameFromDpkBytes">
+      <wsdl:input message="tns:GetDpkNameFromDpkBytesHttpPostIn" />
+      <wsdl:output message="tns:GetDpkNameFromDpkBytesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDpkName">
+      <wsdl:input message="tns:GetDpkNameHttpPostIn" />
+      <wsdl:output message="tns:GetDpkNameHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QuerySoap" type="tns:QuerySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetJobsForDpk">
+      <soap:operation soapAction="http://tempuri.org/GetJobsForDpk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsForChangelist">
+      <soap:operation soapAction="http://tempuri.org/GetJobsForChangelist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsFromWtqXml">
+      <soap:operation soapAction="http://tempuri.org/GetJobsFromWtqXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsFromWtq">
+      <soap:operation soapAction="http://tempuri.org/GetJobsFromWtq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobNames">
+      <soap:operation soapAction="http://tempuri.org/GetJobNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDpkNameFromDpkBytes">
+      <soap:operation soapAction="http://tempuri.org/GetDpkNameFromDpkBytes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDpkName">
+      <soap:operation soapAction="http://tempuri.org/GetDpkName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QuerySoap12" type="tns:QuerySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetJobsForDpk">
+      <soap12:operation soapAction="http://tempuri.org/GetJobsForDpk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsForChangelist">
+      <soap12:operation soapAction="http://tempuri.org/GetJobsForChangelist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsFromWtqXml">
+      <soap12:operation soapAction="http://tempuri.org/GetJobsFromWtqXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsFromWtq">
+      <soap12:operation soapAction="http://tempuri.org/GetJobsFromWtq" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobNames">
+      <soap12:operation soapAction="http://tempuri.org/GetJobNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDpkNameFromDpkBytes">
+      <soap12:operation soapAction="http://tempuri.org/GetDpkNameFromDpkBytes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDpkName">
+      <soap12:operation soapAction="http://tempuri.org/GetDpkName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QueryHttpGet" type="tns:QueryHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetJobsForDpk">
+      <http:operation location="/GetJobsForDpk" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsForChangelist">
+      <http:operation location="/GetJobsForChangelist" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsFromWtqXml">
+      <http:operation location="/GetJobsFromWtqXml" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsFromWtq">
+      <http:operation location="/GetJobsFromWtq" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDpkNameFromDpkBytes">
+      <http:operation location="/GetDpkNameFromDpkBytes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDpkName">
+      <http:operation location="/GetDpkName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QueryHttpPost" type="tns:QueryHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetJobsForDpk">
+      <http:operation location="/GetJobsForDpk" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsForChangelist">
+      <http:operation location="/GetJobsForChangelist" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsFromWtqXml">
+      <http:operation location="/GetJobsFromWtqXml" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobsFromWtq">
+      <http:operation location="/GetJobsFromWtq" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDpkNameFromDpkBytes">
+      <http:operation location="/GetDpkNameFromDpkBytes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDpkName">
+      <http:operation location="/GetDpkName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Query">
+    <wsdl:port name="QuerySoap" binding="tns:QuerySoap">
+      <soap:address location="http://undev/MultiService/Query.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QuerySoap12" binding="tns:QuerySoap12">
+      <soap12:address location="http://undev/MultiService/Query.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QueryHttpGet" binding="tns:QueryHttpGet">
+      <http:address location="http://undev/MultiService/Query.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QueryHttpPost" binding="tns:QueryHttpPost">
+      <http:address location="http://undev/MultiService/Query.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

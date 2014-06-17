@@ -1,0 +1,9 @@
+TARGETNAME=unloaddevice
+TARGETTYPE=PROGRAM
+
+TARGETLIBS = \
+	$(OS_SDK_LIB_PATH)\coredll.lib
+EXEENTRY=mainWCRTStartup
+
+SOURCES= \
+    $(TARGETNAME).cpp

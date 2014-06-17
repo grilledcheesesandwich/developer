@@ -1,0 +1,15 @@
+TARGETNAME=perfmgr
+
+TARGETTYPE=PROGRAM
+EXEENTRY=WinMainCRTStartup
+
+INCLUDES=$(INCLUDES) \
+	$(_PRIVATEROOT)\test\common\inc \
+
+TARGETLIBS= \
+	$(_COREDLL) \
+	$(_QALIBDEPS) \
+	$(TEST_OAK_LIB_PATH)\PerfScenario.lib \
+
+SOURCES= \
+    $(TARGETNAME).cpp \

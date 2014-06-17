@@ -1,0 +1,35 @@
+[Version]                         
+Signature=$Chicago$               
+Class=MakeCertInfClass            
+Provider="Microsoft PKI Unit"     
+
+
+;
+; What to be generated 
+;                                  
+[Certs]                           
+ROOT                   
+
+;
+; This is my root private key spec
+;
+[ROOT_key]               
+outputfile=root.pvk                 
+Provider=RSA                      
+KeySize=0x800                     
+KeySpec=SIGN                     
+
+;
+; Cert specs
+;                                  
+[ROOT]                   
+Version=2                         
+SubjectX500=CN=Root                 
+Issuer=ROOT              
+OutputFile=root.cer                 
+Key=ROOT_key             
+NotBefore=1/1/2005                
+NotAfter=12/31/2007
+GroupId=00010001                  
+ItemId=00000001                   
+

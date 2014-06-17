@@ -1,0 +1,19 @@
+TARGETNAME=cptest
+TARGETTYPE=PROGRAM
+EXEENTRY=wmainCRTStartup
+TARGET_DESTINATION=TEST
+
+UMTYPE=console
+
+INCLUDES= \
+    $(INCLUDES); \
+    $(_PUBLICROOT)\phonebase\oak\inc; \
+    $(BASEOS_INC_PATH); \
+	..; \
+
+SOURCES= \
+    $(TARGETNAME).cpp
+    
+TARGETLIBS= \
+	$(_COREDLL) \
+    $(BASEOS_LIB_PATH)\secruntime.lib \

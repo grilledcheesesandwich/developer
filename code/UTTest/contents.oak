@@ -1,0 +1,8 @@
+GROUP=[NONE]
+OWNER=unionp
+MODULE=UTTest
+FILE=makefile
+FILE=sources
+FILE=UTTest.def
+FILE=UTTest.h
+FILE=UTTest_UnitTests.cpp

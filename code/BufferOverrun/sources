@@ -1,0 +1,17 @@
+TARGETNAME=bufferoverrun
+
+TARGETTYPE=PROGRAM
+EXEENTRY=WinMainCRTStartup
+
+# Compile at warning level 4
+#WARNISERROR=1
+WARNLEVEL=4
+
+INCLUDES=$(INCLUDES)
+
+TARGETLIBS= $(TARGETLIBS) \
+	$(_COMMONSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib \
+
+
+SOURCES= \
+    $(TARGETNAME).cpp \

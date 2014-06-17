@@ -1,0 +1,42 @@
+!if 0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+!endif
+!if 0
+Use of this source code is subject to the terms of the Microsoft
+premium shared source license agreement under which you licensed
+this source code. If you did not accept the terms of the license
+agreement, you are not authorized to use this source code.
+For the terms of the license, please see the license agreement
+signed by you and Microsoft.
+THE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
+!endif
+
+TARGETNAME=actions
+TARGETTYPE=NOTARGET
+TARGETSUBTYPE=MANAGED_EXE
+TARGET_DESTINATION=TEST\COMMON
+
+MANAGED_COMPILER_VER=v4.5
+URT_VER=4.5
+
+SOURCES= \
+    Program.cs \
+
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(_TEST_CORE_CLR_ASSEMBLIES)
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(CORECLR_REF_PATH)\System.Runtime.WindowsRuntime.dll
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(KIT_WINMD_PATH)\Windows.winmd
+
+# MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(CORECLR_REF_PATH)\System.Runtime.dll
+# MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(CORECLR_REF_PATH)\System.Runtime.InteropServices.WindowsRuntime.dll
+# MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(RETAIL_BINARY_PATH)\Microsoft.Phone.dll
+# MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(RETAIL_BINARY_PATH)\Microsoft.Phone.Interop.dll
+# MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(PUBLIC_WPINTERNAL_PATH)\comms\priv_sdk\inc\Gen\Microsoft.Phone.Test.Models.Helper.winmd
+# MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(PUBLIC_WPINTERNAL_PATH)\winrt_priv\WinMetadata\PhoneInternal.Experiences.WinMD
+
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(_UTILITIES)
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(TEST_COMMON_BINARY_PATH)\$(_WPQANAMESPACE).Security.SecurityModel.dll
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(TEST_COMMON_BINARY_PATH)\$(_WPQANAMESPACE).MediaApps.MusicVideo.Library.dll
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(TEST_COMMON_BINARY_PATH)\$(_WPQANAMESPACE).Shell.StartX.AreaLibrary.dll
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(TEST_COMMON_BINARY_PATH)\$(_WPQANAMESPACE).NavigationModel.dll
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(BINPLACE_ROOT)\test\net_bluetooth\$(_CPUDIR)\$(_WPQANAMESPACE).Bluetooth.Common.AreaLibrary.dll
+MANAGED_REFERENCES=$(MANAGED_REFERENCES);$(BINPLACE_ROOT)\test\net_bluetooth\$(_CPUDIR)\BtConnectionManager.dll

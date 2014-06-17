@@ -1,0 +1,37 @@
+TARGETNAME=fuzzical
+
+TARGETTYPE=PROGRAM
+EXEENTRY=WinMainCRTStartup
+
+CDEFINES=$(CDEFINES) -D_ATL_NO_AUTOMATIC_NAMESPACE
+
+!INCLUDE $(_PRIVATEROOT)\test\mobile\areas\apps\pim\pimstore2\sources.inc
+
+# Compile at warning level 4
+WARNISERROR=1
+WARNLEVEL=4
+
+INCLUDES= \
+  $(INCLUDES); \
+  $(_PRIVATEROOT)\test\mobile\areas\apps\pim\pimstore\inc; \
+  $(_PRIVATEROOT)\test\mobile\areas\apps\pim\pimstore2\Common; \
+  $(TEST_ROOT)\common\sharedfuzz; \
+
+SOURCES=\
+    fuzzical.cpp \
+
+    # so others don't need to include these libs
+SOURCELIBS= \
+    $(TEST_OAK_LIB_PATH)\POOM2QA.lib \
+    
+TARGETLIBS=$(_COREDLL) \
+    $(_OLEAUT32) \
+    $(_OLE32) \
+    $(SG_OUTPUT_SDKLIB)\toolhelp.lib \
+    $(_OSSVCS) \
+    $(_AYGSHELL) \
+    $(_COMMCTRL) \
+    $(TEST_OAK_LIB_PATH)\sharedfuzz.lib \
+    $(TARGETLIBS)
+    
+    

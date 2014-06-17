@@ -1,0 +1,8 @@
+DIRS_CE=\
+	attrib2\
+	performance\
+	Subproject1\
+	Test\
+	UTTest{BUILD_ALL_UNITTESTS,IFEXISTS}\
+	coldboot
+

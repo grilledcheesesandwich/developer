@@ -1,0 +1,1 @@
+-assembly Microsoft.MobileDevices.Tests.EmptySuite.dll

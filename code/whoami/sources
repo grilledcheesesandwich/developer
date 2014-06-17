@@ -1,0 +1,23 @@
+TARGETNAME=Whoami
+TARGETTYPE=PROGRAM
+UMTYPE=console
+EXEENTRY=wWinMainCRTStartup
+
+INCLUDES=$(INCLUDES) \
+         $(_PUBLICROOT)\phonebase\oak\inc; \
+         $(PUBLIC_ROOT)\wpinternal\BASEOS\inc; \
+         $(_PUBLICROOT)\CoreSystem\internal\sdk\inc; \
+
+
+TARGETLIBS= $(TARGETLIBS) \
+            $(_COREDLL) \
+            $(_NTDLL) \
+            $(BASEOS_LIB_PATH)\SecRuntime.lib \
+            $(BASEOS_LIB_PATH)\ChamberProf.lib \
+            $(_WPCOREUTIL)\
+            $(_DCOMUUID)\
+
+SOURCES= \
+    $(TARGETNAME).cpp \
+
+ALLOW_DATE_TIME=1

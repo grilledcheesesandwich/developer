@@ -1,0 +1,15 @@
+﻿_cscanf
+_cwscanf
+_ftscanf
+_scanf_l
+_stscanf
+_tcscanf
+_tscanf
+_tscanf_l
+_wscanf_l
+fscanf
+fwscanf
+scanf
+sscanf
+swscanf
+wscanf

@@ -1,0 +1,18 @@
+﻿<Window x:Class="QuickDiff.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="QuickDiff" Height="768" Width="1024">
+    <Grid>
+        <Grid Margin="12,12,0,40" Name="grid1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button Height="23" Margin="0,0,6,6" Name="btnClearRight" VerticalAlignment="Bottom" Click="btnClearRight_Click" Grid.Column="1" HorizontalAlignment="Right" Width="75" Opacity="0.5" Panel.ZIndex="5">Clear</Button>
+            <Button HorizontalAlignment="Right" Margin="0,0,6,6" Name="btnClearLeft" Width="75" Click="btnClearLeft_Click" Height="23" VerticalAlignment="Bottom" Opacity="0.5" Panel.ZIndex="5">Clear</Button>
+            <TextBox HorizontalAlignment="Stretch" Margin="0" Name="txtLeft" VerticalAlignment="Stretch" AcceptsReturn="True" />
+            <TextBox HorizontalAlignment="Stretch" Margin="0" Name="txtRight" VerticalAlignment="Stretch" Grid.Column="1" AcceptsReturn="True" Panel.ZIndex="1" />
+        </Grid>
+        <Button Height="23" HorizontalAlignment="Left" Margin="12,0,0,11" Name="btnDiff" VerticalAlignment="Bottom" Width="75" Click="btnDiff_Click">Diff</Button>
+    </Grid>
+</Window>
