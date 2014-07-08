@@ -54,7 +54,6 @@ function detach     { "SELECT VDISK FILE=`"$(resolve-path $args)`"`r`nDETACH VDI
 filter prop			([string]$property) { $_.$property }
 filter split        { $_.Split("`n").Trim() }
 function hex        { "0x{0:X}" -f [long]$args[0] }
-function pairwise($list) { $i = 0; $list | % { foreach ($li in ($list | select -Skip (++$i))) { new-object PSObject -Property @{Left=$_;Right=$li} } } }
 function wh         { $result = where.exe $args; $result; @($result)[0] | setclip }
 function copylast   { Get-History -Count 1 | prop CommandLine | setclip }
 function nodejs     { C:\Windows\SysWOW64\cmd.exe /k "C:\Program Files (x86)\nodejs\nodevars.bat" }
@@ -97,6 +96,29 @@ function set
     Set-Content -Path env:\$var -Value $value
 }
 
+Function Pairwise {
+    [CmdletBinding()]
+    Param(
+        [Parameter(Mandatory=$True,ValueFromPipeline=$True,ValueFromPipelinebyPropertyName=$True)] $item
+    )
+    
+    Begin
+    {
+        $i = 0;
+        $list = @();
+    }
+    
+    PROCESS {        
+        $list = $list + $item
+        
+        $item | % {
+            foreach ($li in ($list | select -first ($i++)))
+            {
+                new-object psobject -property @{left=$_;right=$li}
+            }
+        }
+    }
+}
 
 # powershell specific functions
 function search-help
@@ -140,6 +162,27 @@ $a
 
 } 
 Set-Alias gg Get-GUIHelp
+
+# dot-source search helpers
+# . researchHelpers.ps1
+
+if ($env:_NTDEVELOPER -eq $null)
+{
+    Write-Host -ForegroundColor Green "Not an NT build window, loading Arcas"    
+    
+    $env:path += ";C:\Program Files (x86)\Git\bin"
+
+    # Make sure to set custom $prompt after loading Arcas
+    if (test-path 'D:\arcadia\ArcadiaEngSys\Arcas\Arcas.ps1')
+    {
+        . 'D:\arcadia\ArcadiaEngSys\Arcas\Arcas.ps1'
+    }
+}
+else
+{   
+    Write-Host -ForegroundColor Green "NT build window, loading NT profile"
+    . "$env:_NTDEVELOPER\profile.ps1"
+}
 
 function global:prompt
 {
@@ -217,44 +260,3 @@ function global:prompt
         "PS $(get-location)`n> "
     }
 }
-
-# dot-source search helpers
-. researchHelpers.ps1
-
-if ($env:_NTDEVELOPER -eq $null)
-{
-    Write-Host -ForegroundColor Green "Not an NT build window, loading Arcas"    
-    
-    # Prevent Arcas from overwriting prompt
-    $global:CustomPrompt = $true
-    
-    $env:path += ";C:\Program Files (x86)\Git\bin"
-
-    # Adding Arcas which will only init if global:OpenArcas is set
-    if (test-path 'D:\arcadia\ArcadiaEngSys\Arcas\Arcas.ps1')
-    {
-        . 'D:\arcadia\ArcadiaEngSys\Arcas\Arcas.ps1'
-    }
-}
-else
-{   
-    Write-Host -ForegroundColor Green "NT build window, loading NT profile"
-    . "$env:_NTDEVELOPER\profile.ps1"
-}
-
-<# load environment-specific profile
-$paths = ("$env:_NTDEVELOPER\profile.ps1", "E:\SkyDrive\developr\ps\posh-git\profile.example.ps1" )
-foreach ($p in $paths)
-{
-    if (test-path $p)
-    {
-      write-host "Loading profile from developer directory"
-      . $p
-      return
-    }
-    else
-    {
-      write-host "No profile found at [$p]"
-    }
-}
-#>

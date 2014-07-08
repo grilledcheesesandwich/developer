@@ -1,0 +1,9 @@
+E:\SkyDrive\VSProjects\ccd\bin\Debug\ccd.exe
+E:\SkyDrive\VSProjects\ccd\bin\Debug\ccd.pdb
+E:\SkyDrive\VSProjects\ccd\obj\x86\Debug\ccd.exe
+E:\SkyDrive\VSProjects\ccd\obj\x86\Debug\ccd.pdb
+D:\arcadia\developer\unionp\code\ccd\obj\x86\Debug\ccd.exe
+D:\arcadia\developer\unionp\code\ccd\obj\x86\Debug\ccd.pdb
+D:\arcadia\developer\unionp\code\ccd\obj\x86\Debug\ccd.csprojResolveAssemblyReference.cache
+D:\arcadia\developer\unionp\code\ccd\bin\Debug\ccd.exe
+D:\arcadia\developer\unionp\code\ccd\bin\Debug\ccd.pdb
